@@ -87,8 +87,9 @@ public class ContextEncodedProbBackoffLm<W> extends AbstractContextEncodedNgramL
 				final float backOff = backoffIndex < 0 ? 0.0f : values.getBackoff(currContextOrder, backoffIndex);
 				}
 				final float backOff = backoffIndex < 0 ? 0.0f : values.getBackoff(currContextOrder, backoffIndex);
-				backoffSum += (Float.isNaN(backOff) ? 0.0f : backOff);
-				currContextOffset = currContextOrder == 0 ? 0 : values.getSuffixOffset(currContextOffset, currContextOrder);
+				backoffSum += (Float.is//				for (int x = 0; x < 100; ++x) {
+//					long y = currContextOrder == 0 ? 0 : values.getSuffixOffset(backoffIndex, currContextOrder);
+//extOrder);
 			}
 			currContextOrder--;
 		}
@@ -153,5 +154,3 @@ public class ContextEncodedProbBackoffLm<W> extends AbstractContextEncodedNgramL
 		for (int i = 1; i < map.getMaxNgramOrder(); ++i) {
 			Logger.logss("Order " + i + " " + map.successRate(i) + " " + map.failureRate(i));
 		}
-	}
-}
