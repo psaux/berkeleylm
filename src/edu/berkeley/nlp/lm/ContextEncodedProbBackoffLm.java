@@ -77,9 +77,6 @@ public class ContextEncodedProbBackoffLm<W> extends AbstractContextEncodedNgramL
 				//					final float backOff = backoffIndex < 0 ? 0.0f : values.getBackoff(currContextOrder, backoffIndex);
 				//				}
 
-				for (int x = 0; x < 100; ++x) {
-					final float backOff = backoffIndex < 0 ? 0.0f : values.getBackoff(currContextOrder, backoffIndex);
-				}
 				final float backOff = backoffIndex < 0 ? 0.0f : values.getBackoff(currContextOrder, backoffIndex);
 				urrContextOrder, backoffIndex);
 				}
