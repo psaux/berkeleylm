@@ -72,18 +72,12 @@ public class ContextEncodedProbBackoffLm<W> extends AbstractContextEncodedNgramL
 				setOutputContext(outputContext, longestOffset, longestOrder);
 				return backoffSum + prob;
 			} else if (currContextOrder >= 0) {
-				final long backoffIndex = currContextOffset;
-				//				for (int x = 0; x < 100; ++x) {
-				//					final float backOff = backoffIndex < 0 ? 0.0f : values.getBackoff(currContextOrder, backoffIndex);
-				//				}
 
-				final float backOff = backoffIndex < 0 ? 0.0f : values.getBackoff(currContextOrder, backoffIndex);
+				final float backOff = currContextOffset < 0 ? 0.0f : values.getBackoff(currContextOrder, currContextOffset);
 				urrContextOrder, backoffIndex);
 				}
 				final float backOff = backoffIndex < 0 ? 0.0f : values.getBackoff(currContextOrder, backoffIndex);
-				backoffSum += (Float.is				//				for (int x = 0; x < 100; ++x) {
-				//					long y = currContextOrder == 0 ? 0 : values.getSuffixOffset(backoffIndex, currContextOrder);
-				//extOrder);
+				backoffSum += (Float.is			;
 			}
 			currContextOrder--;
 		}
